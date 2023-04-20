@@ -59,13 +59,27 @@ runningTimeInMinutes: 107,
 },
 ];
 
-console.log(movies.sort(byProperty('releaseYear', '>'))); // виведе масив фільмів посортованих по року випуску, від старішого до новішого*
-console.log(movies.sort(byProperty('runningTimeInMinutes', '<'))); // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого*
+// console.log(movies.sort(byProperty('releaseYear', '>'))); // виведе масив фільмів посортованих по року випуску, від старішого до новішого*
+// console.log(movies.sort(byProperty('runningTimeInMinutes', '<'))); // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого*
 console.log(movies.sort(byProperty('movieName', '>'))); // виведе масив фільмів посортованих по назві, в алфавітному порядку*
 
 function byProperty(property, direction) {
 // тут ваш код*
-movies.sort((a, b) => a.releaseYear - b.releaseYear);
-movies.sort((a, b) => b.runningTimeInMinutes - a.runningTimeInMinutes);
-movies.sort((a, b) => a.movieName.localeCompare(b.movieName));
+if (direction === ">") {
+    return ((a, b) => a[property] - b[property]);
+}
+if (direction === "<") {
+    return ((a, b) => b[property] - a[property]);
+}
+if (property === "") {
+    return ((a, b) => a[property] - b[property]);
+}
+
+
+
+
+
+// movies.sort((a, b) => a.releaseYear - b.releaseYear);
+// movies.sort((a, b) => b.runningTimeInMinutes - a.runningTimeInMinutes);
+// movies.sort((a, b) => a.movieName.localeCompare(b.movieName));
 }

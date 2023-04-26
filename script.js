@@ -71,9 +71,6 @@ if (direction === ">") {
 if (direction === "<") {
     return ((a, b) => b[property] - a[property]);
 }
-if (property === "") {
-    return ((a, b) => a[property] - b[property]);
-}
 
 
 

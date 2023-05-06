@@ -80,3 +80,35 @@ if (direction === "<") {
 // movies.sort((a, b) => b.runningTimeInMinutes - a.runningTimeInMinutes);
 // movies.sort((a, b) => a.movieName.localeCompare(b.movieName));
 }
+
+
+// продвинута робота з функціями 2
+
+
+// detonatorTimer(3);
+// // 3
+// // 2
+// // 1
+// // BOOM!*
+
+// function detonatorTimer(delay) {
+// if (delay > 0) {
+//     console.log(delay);
+//     delay --;
+//     setTimeout(detonatorTimer, 1000, delay);
+// } else if (delay === 0) {
+// console.log(`BOOM!`);
+// }
+// }
+
+
+var i = 0;
+
+var id = setInterval(
+function(){
+i++;
+console.log("Прошло " + i + " сек.");
+if(i == 5){
+clearInterval(id);
+}
+},1000)

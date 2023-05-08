@@ -86,10 +86,10 @@ if (direction === "<") {
 
 
 // detonatorTimer(3);
-// // 3
-// // 2
-// // 1
-// // BOOM!*
+// 3
+// 2
+// 1
+// BOOM!*
 
 // function detonatorTimer(delay) {
 // if (delay > 0) {
@@ -102,13 +102,41 @@ if (direction === "<") {
 // }
 
 
-var i = 0;
+// function detonatorTimer(from) {
+//     let current = from;
+  
+//     let timerId = setInterval(function() {
+//      console.log(current);
+//       if (current == 0) {
+//         console.log(`BOOM!`);
+//         clearInterval(timerId);
+//       }
+//       current--;
+//     }, 1000);
+//   }
+  
+//   detonatorTimer(3);
 
-var id = setInterval(
-function(){
-i++;
-console.log("Прошло " + i + " сек.");
-if(i == 5){
-clearInterval(id);
+let dog = {
+    name: "Baddy",
+    breed: "Cane Corso",
+    gender: "male",
+    age: 3,
+    nativeCountry: "Italy",
+    bestCountry: "Ukraine",
+    currentCountry: "Germany",
+    hobby: "snap",
+    introduce() {
+    console.log(`My name is ${this.name}, and I am living in ${this.currentCountry}.`);
+    },
+    wishes() {
+        console.log(`I am sure that in age ${this.age+1}, I am gonna be a Daddy!`);
+    },
+    hopes () {
+        console.log(`I am going to visit ${this.nativeCountry} and come back to ${this.bestCountry}.`);
+    },
 }
-},1000)
+
+dog.introduce();
+dog.wishes();
+dog.hopes();

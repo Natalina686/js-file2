@@ -156,15 +156,15 @@ if (direction === "<") {
 // 4 задача
 
 function someFunction(f, ms) {
-
-    return function slowedSomeFunction() {
+    let message = "Hello";
+    return function () {
       setTimeout(() => f.apply(this, message), ms);
       
     };
   }
   
   let slowedSomeFunction = someFunction(console.log("Chill out, you will get you result in 5 seconds"), 5000);
-  let message = "Hello";
+ 
   slowedSomeFunction(); 
  
 

@@ -117,26 +117,54 @@ if (direction === "<") {
   
 //   detonatorTimer(3);
 
-let dog = {
-    name: "Baddy",
-    breed: "Cane Corso",
-    gender: "male",
-    age: 3,
-    nativeCountry: "Italy",
-    bestCountry: "Ukraine",
-    currentCountry: "Germany",
-    hobby: "snap",
-    introduce() {
-    console.log(`My name is ${this.name}, and I am living in ${this.currentCountry}.`);
-    },
-    wishes() {
-        console.log(`I am sure that in age ${this.age+1}, I am gonna be a Daddy!`);
-    },
-    hopes () {
-        console.log(`I am going to visit ${this.nativeCountry} and come back to ${this.bestCountry}.`);
-    },
-}
+// 2 задача
 
-dog.introduce();
-dog.wishes();
-dog.hopes();
+// let dog = {
+//     name: "Baddy",
+//     breed: "Cane Corso",
+//     gender: "male",
+//     age: 3,
+//     nativeCountry: "Italy",
+//     bestCountry: "Ukraine",
+//     currentCountry: "Germany",
+//     hobby: "snap",
+//     introduce() {
+//     console.log(`My name is ${this.name}, and I am living in ${this.currentCountry}.`);
+//     },
+//     wishes() {
+//         console.log(`I am sure that in age ${this.age+1}, I am gonna be a Daddy!`);
+//     },
+//     hopes () {
+//         console.log(`I am going to visit ${this.nativeCountry} and come back to ${this.bestCountry}.`);
+//     },
+// }
+
+// dog.introduce();
+// dog.wishes();
+// dog.hopes();
+
+// let securedSelfIntroduce = dog.introduce.bind(dog);
+// let securedWishes = dog.wishes.bind(dog);
+// let securedHopes = dog.hopes.bind(dog);
+
+// setTimeout(securedSelfIntroduce, 1000); 
+// setTimeout(securedWishes, 2000); 
+// setTimeout(securedHopes, 3000); 
+
+
+
+// 4 задача
+
+function someFunction(f, ms) {
+
+    return function slowedSomeFunction() {
+      setTimeout(() => f.apply(this, message), ms);
+      
+    };
+  }
+  
+  let slowedSomeFunction = someFunction(console.log("Chill out, you will get you result in 5 seconds"), 5000);
+  let message = "Hello";
+  slowedSomeFunction(); 
+ 
+

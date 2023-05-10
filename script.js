@@ -102,20 +102,20 @@ if (direction === "<") {
 // }
 
 
-// function detonatorTimer(from) {
-//     let current = from;
+function detonatorTimer(from) {
+    let current = from;
   
-//     let timerId = setInterval(function() {
-//      console.log(current);
-//       if (current == 0) {
-//         console.log(`BOOM!`);
-//         clearInterval(timerId);
-//       }
-//       current--;
-//     }, 1000);
-//   }
+    let timerId = setInterval(function() {
+     console.log(current);
+      if (current == 1) {
+        console.log(`BOOM!`);
+        clearInterval(timerId);
+      }
+      current--;
+    }, 1000);
+  }
   
-//   detonatorTimer(3);
+  detonatorTimer(3);
 
 // 2 задача
 
@@ -155,10 +155,10 @@ if (direction === "<") {
 
 // 4 задача
 
-function someFunction(f, ms) {
+function someFunction(f, seconds) {
     let message = "Hello";
     return function () {
-      setTimeout(() => f.apply(this, message), ms);
+      setTimeout(() => f.apply(this, message), seconds);
       
     };
   }

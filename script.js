@@ -61,16 +61,16 @@ runningTimeInMinutes: 107,
 
 // console.log(movies.sort(byProperty('releaseYear', '>'))); // виведе масив фільмів посортованих по року випуску, від старішого до новішого*
 // console.log(movies.sort(byProperty('runningTimeInMinutes', '<'))); // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого*
-console.log(movies.sort(byProperty('movieName', '>'))); // виведе масив фільмів посортованих по назві, в алфавітному порядку*
+// console.log(movies.sort(byProperty('movieName', '>'))); // виведе масив фільмів посортованих по назві, в алфавітному порядку*
 
-function byProperty(property, direction) {
-// тут ваш код*
-if (direction === ">") {
-    return ((a, b) => a[property] - b[property]);
-}
-if (direction === "<") {
-    return ((a, b) => b[property] - a[property]);
-}
+// function byProperty(property, direction) {
+// // тут ваш код*
+// if (direction === ">") {
+//     return ((a, b) => a[property] - b[property]);
+// }
+// if (direction === "<") {
+//     return ((a, b) => b[property] - a[property]);
+// }
 
 
 
@@ -78,8 +78,8 @@ if (direction === "<") {
 
 // movies.sort((a, b) => a.releaseYear - b.releaseYear);
 // movies.sort((a, b) => b.runningTimeInMinutes - a.runningTimeInMinutes);
-// movies.sort((a, b) => a.movieName.localeCompare(b.movieName));
-}
+// // movies.sort((a, b) => a.movieName.localeCompare(b.movieName));
+// }
 
 
 // продвинута робота з функціями 2
@@ -102,20 +102,24 @@ if (direction === "<") {
 // }
 
 
-function detonatorTimer(from) {
-    let current = from;
+// function detonatorTimer(from) {
+//     let current = from;
   
-    let timerId = setInterval(function() {
-     console.log(current);
-      if (current == 1) {
-        console.log(`BOOM!`);
-        clearInterval(timerId);
-      }
-      current--;
-    }, 1000);
-  }
+//     let timerId = setInterval(function() {
+
+//       if (current != 0) {
+//         console.log(current);
+//       }
+
+//       if (current == 0) {
+//         console.log(`BOOM!`);
+//         clearInterval(timerId);
+//       }
+//       current--;
+//     }, 1000);
+//   }
   
-  detonatorTimer(3);
+//   detonatorTimer(3);
 
 // 2 задача
 
@@ -155,16 +159,17 @@ function detonatorTimer(from) {
 
 // 4 задача
 
-function someFunction(f, seconds) {
-    let message = "Hello";
-    return function () {
-      setTimeout(() => f.apply(this, message), seconds);
-      
-    };
-  }
-  
-  let slowedSomeFunction = someFunction(console.log("Chill out, you will get you result in 5 seconds"), 5000);
  
-  slowedSomeFunction(); 
- 
+let interval = setInterval(function(greet, name) {
+let g = greet;
+let n = name;
 
+console.log(g, n);
+clearInterval(interval);
+}, 5000, "Hello, ", "Sergiy!");
+
+function wish() {
+ let message = "Chill out, you will get you result in 5 seconds.";
+  console.log(message);
+}
+wish();

@@ -158,18 +158,38 @@ runningTimeInMinutes: 107,
 
 
 // 4 задача
-
  
-let interval = setInterval(function(greet, name) {
+// let interval = setInterval(function(greet, name) {
+// let g = greet;
+// let n = name;
+
+// console.log(g, n);
+// clearInterval(interval);
+// }, 5000, "Hello, ", "Sergiy!");
+
+// function wish() {
+//  let message = "Chill out, you will get you result in 5 seconds.";
+//   console.log(message);
+// }
+// wish();
+
+function someFunction(greet, name) {
 let g = greet;
 let n = name;
-
 console.log(g, n);
-clearInterval(interval);
-}, 5000, "Hello, ", "Sergiy!");
-
-function wish() {
- let message = "Chill out, you will get you result in 5 seconds.";
-  console.log(message);
 }
-wish();
+
+// создаём обёртки
+let slowedSomeFunction = slower(someFunction, 5000);
+
+
+slowedSomeFunction("Hello, ", "Sergiy!"); // показывает "test" после 1000 мс
+
+
+function slower(someFunction, ms) {
+  console.log("Chill out, you will get you result in 5 seconds")
+  return function() {
+    setTimeout(() => someFunction.apply(this, arguments), ms);
+  };
+
+}
